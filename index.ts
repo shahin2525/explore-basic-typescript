@@ -91,14 +91,45 @@ interface Driver {
   name: string;
   licenseNumber: number;
 }
-const car: Car = { make: "Toyta", model: "l-2011", releaseYear: 2022 };
+const car: Car = { make: "Toyta", model: "l-2012", releaseYear: 2022 };
 const driver: Driver = { name: "Rakib", licenseNumber: 10011 };
-const getPropertiesFromAllObject = (
-  car: Car,
-  driver: Driver
-): { car: Car; driver: Driver } => {
-  return { car, driver };
+const getPropertiesFromAllObject = (car: Car, driver: Driver): object => {
+  return { ...car, ...driver };
 };
-console.log(getPropertiesFromAllObject(car, driver));
+getPropertiesFromAllObject(car, driver);
 
 // problem5
+
+// problem6
+const numbers1: number[] = [1, 2, 3, 4, 5];
+const numbers2: (number | string)[] = [1, 2, 3, "four"];
+const checkArrayOfNumber = (param: unknown) => {
+  if (Array.isArray(param) && param.every((item) => typeof item === "number")) {
+    const total = param.reduce((acc, current) => {
+      return acc + current;
+    }, 0);
+    console.log(total);
+  } else {
+    console.log("this is not array");
+  }
+};
+checkArrayOfNumber(numbers2);
+
+// problem6
+
+// problem7
+const numbers: number[] = [1, 2, 3, 4, 5, 2];
+const fruits: string[] = ["apple", "banana", "cherry", "date", "apple"];
+
+const targetNumber: number = 2;
+const targetString: string = "date";
+
+const findFirstOccurrence = <T>(param: T[], target: T) => {
+  if (Array.isArray(param)) {
+    return param.indexOf(target);
+  }
+  return -1;
+};
+findFirstOccurrence(fruits, targetString);
+
+// problem7
