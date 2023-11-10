@@ -25,7 +25,37 @@
 
 5.  Question-5?
 
-    - Answer: [An enum is a special class that represent group of constant.
-      Enum-Advantage: Enum helps to maintain code effeiently . It also helps to handle error properly at running time . It also produces code readability and clarity.
+    - Answer: [Type guard is a powerful feature of typescript .It checks value type in block scope .
+
+              ]
+
+6.  Question-6?
+
+        - Answer: [Readonly properties can be used to make your code more robust and prevent accidental changes to important data.
+         example :
+
+          interface Number{
+
+    readonly x: number;
+    readonly y: number;
+    }
+
+const point: Number = {
+x: 10,
+y: 20,
+};
+
+not i try to change my assigned value
+point.x = 30 (it will not run)
+
+]
+
+7.  Question-7?
+
+    - Answer: [union type can be used to make code more flexible and expressive .
+
+    Example : type Color = string|number;
+    const color:Color = "red" (valid)
+    const color:Color = 10 (valid)
 
               ]

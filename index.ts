@@ -6,10 +6,7 @@ const getLengthOrSquare = (param: number | string) => {
     return param * param;
   }
 };
-
-getLengthOrSquare("rakib");
-
-// problem1
+getLengthOrSquare(5);
 
 // problem2
 interface Person {
@@ -40,8 +37,6 @@ const getAddressCity = (person: Person): string | undefined => {
 
 getAddressCity(person);
 
-// problem2
-
 //problem3
 class Cat {
   name: string;
@@ -61,11 +56,8 @@ const isCat = (cat: Cat) => {
   }
 };
 isCat(cat);
-// problem3
 
 // problem4
-type List = [number, string, number, string];
-const list: List = [10, "two", 30, "four"];
 
 const getTotalNumber = (array: List): number => {
   let total = 0;
@@ -77,8 +69,9 @@ const getTotalNumber = (array: List): number => {
 
   return total;
 };
+type List = [number, string, number, string];
+const list: List = [10, "two", 30, "four"];
 getTotalNumber(list);
-// problem4
 
 // problem5
 
@@ -98,11 +91,8 @@ const getPropertiesFromAllObject = (car: Car, driver: Driver): object => {
 };
 getPropertiesFromAllObject(car, driver);
 
-// problem5
-
 // problem6
-const numbers1: number[] = [1, 2, 3, 4, 5];
-const numbers2: (number | string)[] = [1, 2, 3, "four"];
+
 const checkArrayOfNumber = (param: unknown) => {
   if (Array.isArray(param) && param.every((item) => typeof item === "number")) {
     const total = param.reduce((acc, current) => {
@@ -113,16 +103,11 @@ const checkArrayOfNumber = (param: unknown) => {
     console.log("this is not array");
   }
 };
+const numbers1: number[] = [1, 2, 3, 4, 5];
+const numbers2: (number | string)[] = [1, 2, 3, "four"];
 checkArrayOfNumber(numbers2);
 
-// problem6
-
 // problem7
-const numbers: number[] = [1, 2, 3, 4, 5, 2];
-const fruits: string[] = ["apple", "banana", "cherry", "date", "apple"];
-
-const targetNumber: number = 2;
-const targetString: string = "date";
 
 const findFirstOccurrence = <T>(param: T[], target: T) => {
   if (Array.isArray(param)) {
@@ -130,6 +115,9 @@ const findFirstOccurrence = <T>(param: T[], target: T) => {
   }
   return -1;
 };
-findFirstOccurrence(fruits, targetString);
+const numbers: number[] = [1, 2, 3, 4, 5, 2];
+const fruits: string[] = ["apple", "banana", "cherry", "date", "apple"];
 
-// problem7
+const targetNumber: number = 2;
+const targetString: string = "date";
+findFirstOccurrence(fruits, targetString);
